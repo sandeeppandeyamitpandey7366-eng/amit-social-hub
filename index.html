@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827">
+<title>Amit Social Hub</title>
+<style>
+:root{--bg:#0b1120;--panel:#121c2e;--panel2:#1b2940;--text:#f8fafc;--muted:#a9b8cc;--accent:#8b5cf6;--line:#2a3a53;--green:#34d399}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#0b1120,#111827 55%,#17122c);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}.wrap{max-width:720px;margin:auto;padding:16px 14px 36px}.top{display:flex;align-items:center;gap:12px;padding:12px 0 20px}.logo{height:48px;width:48px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#8b5cf6,#ec4899);font-weight:900;font-size:18px}.brand{font-size:20px;font-weight:800}.sub{font-size:11px;color:var(--muted);letter-spacing:1.1px}.pill{margin-left:auto;font-size:11px;color:#ddd6fe;border:1px solid #6d5aa8;border-radius:99px;padding:5px 9px}.hero{padding:20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#1d2a43,#251a42);margin-bottom:14px}.eyebrow{color:#c4b5fd;font-size:12px;font-weight:700}.hero h1{font-size:26px;line-height:1.18;margin:8px 0}.hero p{color:var(--muted);font-size:14px;line-height:1.55;margin:0}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}.stat,.card{background:rgba(18,28,46,.95);border:1px solid var(--line);border-radius:17px;padding:15px}.stat small{display:block;color:var(--muted);font-size:12px}.stat strong{display:block;font-size:24px;margin-top:4px}.nav{display:flex;gap:8px;overflow:auto;margin:14px 0}.nav button{white-space:nowrap;flex:1}.btn,button{border:0;border-radius:12px;padding:12px 14px;font:inherit;font-weight:700;cursor:pointer;background:var(--accent);color:white}.btn.secondary,button.secondary{background:#24324a;border:1px solid #3a4c68;color:#e2e8f0}.btn.small,button.small{padding:9px 11px;font-size:13px}.section{display:none}.section.active{display:block}.section h2{font-size:19px;margin:12px 0}.muted{color:var(--muted);font-size:13px;line-height:1.5}.services{display:grid;gap:10px}.service{display:flex;align-items:flex-start;gap:12px}.emoji{width:42px;height:42px;border-radius:13px;background:#26334a;display:grid;place-items:center;font-size:21px;flex-shrink:0}.service h3{font-size:15px;margin:1px 0 5px}.service p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.service .price{color:#c4b5fd;font-size:12px;font-weight:700;margin-top:7px}.service .btn{margin-left:auto;flex-shrink:0}.field{margin:12px 0}.field label{display:block;font-size:13px;color:#dbeafe;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #34445d;border-radius:11px;background:#0d1728;color:white;font:inherit}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #8b5cf6}.notice{padding:12px;border:1px solid #6753a1;border-radius:12px;background:#251d3e;color:#e9ddff;font-size:12px;line-height:1.5;margin:12px 0}.orders{display:grid;gap:10px}.order{border:1px solid var(--line);border-radius:14px;padding:13px;background:#121c2e}.order-head{display:flex;justify-content:space-between;gap:8px}.status{font-size:11px;padding:4px 8px;border-radius:99px;background:#26334a;color:#dbeafe;white-space:nowrap}.empty{text-align:center;color:var(--muted);padding:22px;border:1px dashed #3a4c68;border-radius:14px}.foot{color:#8190a7;font-size:11px;text-align:center;margin-top:22px;line-height:1.6}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.danger{background:#7f1d1d}.hide{display:none!important}
+@media(min-width:600px){.services{grid-template-columns:1fr 1fr}.hero h1{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo">ASH</div>
+    <div><div class="brand">Amit Social Hub</div><div class="sub">SOCIAL MEDIA GROWTH PANEL</div></div>
+    <div class="pill">STARTER DEMO</div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">आपकी ग्रोथ, एक जगह</div>
+    <h1>सोशल मीडिया को<br>स्मार्ट तरीके से बढ़ाएँ।</h1>
+    <p>कंटेंट प्लानिंग, पोस्ट प्रमोशन और एनालिटिक्स सेवाएँ। यह शुरुआती डेमो मोबाइल पर चलता है।</p>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><small>कुल डेमो ऑर्डर</small><strong id="totalOrders">0</strong></div>
+    <div class="stat"><small>उपलब्ध सेवाएँ</small><strong id="serviceCount">6</strong></div>
+  </div>
+
+  <nav class="nav" aria-label="मुख्य मेनू">
+    <button class="tab" data-tab="services">सेवाएँ</button>
+    <button class="tab secondary" data-tab="neworder">ऑर्डर दें</button>
+    <button class="tab secondary" data-tab="orders">मेरे ऑर्डर</button>
+    <button class="tab secondary" data-tab="admin">एडमिन</button>
+  </nav>
+
+  <section id="services" class="section active">
+    <h2>ग्रोथ सेवाएँ</h2>
+    <p class="muted">सभी कीमतें उदाहरण हैं। वास्तविक सेवा देने से पहले अपनी लागत और शर्तें तय करें।</p>
+    <div class="services" id="serviceList"></div>
+  </section>
+
+  <section id="neworder" class="section">
+    <h2>नया ऑर्डर</h2>
+    <div class="notice">यह डेमो केवल ऑर्डर रिकॉर्ड करता है। अभी भुगतान, Instagram कनेक्शन या कोई वास्तविक प्रमोशन नहीं होता। अपना पासवर्ड कभी साझा न करें।</div>
+    <form id="orderForm">
+      <div class="field"><label for="customer">आपका नाम</label><input id="customer" required maxlength="60" placeholder="नाम लिखें"></div>
+      <div class="field"><label for="service">सेवा चुनें</label><select id="service" required></select></div>
+      <div class="field"><label for="link">पोस्ट / पेज का सार्वजनिक लिंक</label><input id="link" type="url" required placeholder="https://..." maxlength="300"></div>
+      <div class="field"><label for="notes">अतिरिक्त जानकारी (वैकल्पिक)</label><textarea id="notes" rows="3" maxlength="300" placeholder="अपने लक्ष्य या निर्देश लिखें"></textarea></div>
+      <button type="submit" style="width:100%">डेमो ऑर्डर सबमिट करें</button>
+    </form>
+  </section>
+
+  <section id="orders" class="section">
+    <div class="row"><h2>ऑर्डर रिकॉर्ड</h2><button class="secondary small" id="refreshOrders">रिफ्रेश</button></div>
+    <p class="muted">इस डिवाइस के ब्राउज़र में सेव हुए डेमो ऑर्डर यहाँ दिखेंगे।</p>
+    <div class="orders" id="orderList"></div>
+  </section>
+
+  <section id="admin" class="section">
+    <h2>एडमिन पैनल</h2>
+    <div class="notice">डेमो सुरक्षा सूचना: यह असली लॉगिन नहीं है। इस फ़ाइल में कोई वास्तविक पासवर्ड, ग्राहक डेटा या भुगतान जानकारी न रखें। ऑनलाइन लॉन्च करने से पहले सर्वर-साइड लॉगिन बनाना होगा।</div>
+    <div class="field"><label for="adminPin">डेमो PIN (1234)</label><input id="adminPin" inputmode="numeric" type="password" maxlength="4" placeholder="1234"></div>
+    <button id="unlockAdmin">एडमिन व्यू खोलें</button>
+    <div id="adminTools" class="hide">
+      <div class="stats">
+        <div class="stat"><small>कुल ऑर्डर</small><strong id="adminTotal">0</strong></div>
+        <div class="stat"><small>पेंडिंग</small><strong id="pendingTotal">0</strong></div>
+      </div>
+      <div class="field"><label for="statusOrder">ऑर्डर चुनें</label><select id="statusOrder"></select></div>
+      <div class="field"><label for="newStatus">स्थिति बदलें</label><select id="newStatus"><option>Pending</option><option>In progress</option><option>Completed</option><option>Cancelled</option></select></div>
+      <button id="saveStatus">स्थिति सेव करें</button>
+      <button id="exportOrders" class="secondary">ऑर्डर CSV डाउनलोड करें</button>
+      <button id="clearOrders" class="danger">सभी डेमो ऑर्डर मिटाएँ</button>
+      <p class="muted">PIN सिर्फ डेमो सुविधा है, सुरक्षा नियंत्रण नहीं।</p>
+    </div>
+  </section>
+
+  <footer class="foot">Amit Social Hub · Starter Demo<br>कोई वास्तविक फॉलोअर/लाइक नहीं बढ़ाए जाते। ऑर्डर इसी ब्राउज़र में सेव होते हैं।</footer>
+</div>
+<script>
+const services = [
+ {id:"ig-plan",icon:"📸",platform:"Instagram",name:"Instagram कंटेंट प्लान",desc:"पोस्ट आइडिया, कैप्शन और 7-दिन का कंटेंट कैलेंडर",price:49},
+ {id:"reel-audit",icon:"🎬",platform:"Instagram",name:"Reels प्रोफ़ाइल ऑडिट",desc:"हुक, कैप्शन, कवर और पोस्टिंग सुधार की चेकलिस्ट",price:79},
+ {id:"yt-seo",icon:"▶️",platform:"YouTube",name:"YouTube SEO सेटअप",desc:"टाइटल, डिस्क्रिप्शन और कीवर्ड सुधार सुझाव",price:99},
+ {id:"yt-plan",icon:"📈",platform:"YouTube",name:"वीडियो ग्रोथ प्लान",desc:"विषय चयन और ऑडियंस बनाए रखने के सुझाव",price:99},
+ {id:"fb-page",icon:"🔵",platform:"Facebook",name:"Facebook पेज ऑडिट",desc:"पेज बायो, पोस्ट और ऑडियंस रणनीति चेकलिस्ट",price:79},
+ {id:"promo-plan",icon:"📣",platform:"Multi-platform",name:"प्रमोशन प्लान",desc:"लक्षित ऑडियंस और वैध विज्ञापन योजना",price:129}
+];
+const $=id=>document.getElementById(id);
+const getOrders=()=>{try{return JSON.parse(localStorage.getItem("ash_orders")||"[]")}catch(e){return []}};
+const setOrders=o=>localStorage.setItem("ash_orders",JSON.stringify(o));
+const money=n=>"₹"+n;
+function renderServices(){
+ $("serviceList").innerHTML=services.map(s=>`<article class="card service"><div class="emoji">${s.icon}</div><div style="flex:1"><h3>${s.name}</h3><p>${s.platform} · ${s.desc}</p><div class="price">डेमो कीमत: ${money(s.price)}</div></div><button class="small" data-order="${s.id}">चुनें</button></article>`).join("");
+ $("service").innerHTML=services.map(s=>`<option value="${s.id}">${s.name} — ${money(s.price)}</option>`).join("");
+ $("serviceCount").textContent=services.length;
+}
+function update(){
+ const orders=getOrders();
+ $("totalOrders").textContent=orders.length;
+ $("adminTotal").textContent=orders.length;
+ $("pendingTotal").textContent=orders.filter(o=>o.status==="Pending").length;
+ $("orderList").innerHTML=orders.length?orders.slice().reverse().map(o=>`<article class="order"><div class="order-head"><strong>#${o.id} · ${esc(o.customer)}</strong><span class="status">${esc(o.status)}</span></div><p style="margin:8px 0 3px">${esc(o.serviceName)}</p><p class="muted" style="margin:0">${esc(o.platform)} · ${money(o.price)} · ${esc(o.date)}</p><p class="muted" style="overflow-wrap:anywhere;margin-bottom:0">${esc(o.link)}</p></article>`).join(""):'<div class="empty">अभी कोई ऑर्डर नहीं है।</div>';
+ $("statusOrder").innerHTML=orders.length?orders.map(o=>`<option value="${o.id}">#${o.id} — ${esc(o.customer)} (${esc(o.status)})</option>`).join(""):'<option value="">कोई ऑर्डर नहीं</option>';
+}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function showTab(tab){
+ document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===tab));
+ document.querySelectorAll(".tab").forEach(b=>{const active=b.dataset.tab===tab;b.classList.toggle("secondary",!active)});
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+$("serviceList").addEventListener("click",e=>{const b=e.target.closest("[data-order]");if(!b)return;$("service").value=b.dataset.order;showTab("neworder")});
+$("orderForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const s=services.find(x=>x.id===$("service").value);
+ const link=$("link").value.trim();
+ if(!/^https?:\/\//i.test(link)){alert("कृपया https:// से शुरू होने वाला सार्वजनिक लिंक डालें।");return}
+ const orders=getOrders();
+ const order={id:Date.now().toString().slice(-7),customer:$("customer").value.trim(),serviceId:s.id,serviceName:s.name,platform:s.platform,price:s.price,link,notes:$("notes").value.trim(),status:"Pending",date:new Date().toLocaleString("hi-IN")};
+ orders.push(order);setOrders(orders);$("orderForm").reset();renderServices();update();showTab("orders");alert("डेमो ऑर्डर सेव हो गया। अभी कोई वास्तविक सेवा या भुगतान नहीं हुआ।");
+});
+$("refreshOrders").addEventListener("click",update);
+$("unlockAdmin").addEventListener("click",()=>{if($("adminPin").value==="1234"){$("adminTools").classList.remove("hide");update();alert("डेमो एडमिन व्यू खुल गया। यह सुरक्षित लॉगिन नहीं है।")}else alert("डेमो PIN सही नहीं है।")});
+$("saveStatus").addEventListener("click",()=>{const id=$("statusOrder").value;if(!id)return alert("पहले ऑर्डर बनाएँ।");const orders=getOrders();const o=orders.find(x=>x.id===id);if(o){o.status=$("newStatus").value;setOrders(orders);update();alert("डेमो स्थिति अपडेट हो गई।")}});
+$("exportOrders").addEventListener("click",()=>{const rows=getOrders();if(!rows.length)return alert("एक्सपोर्ट करने के लिए ऑर्डर नहीं हैं।");const keys=["id","customer","serviceName","platform","price","link","status","date"];const csv=[keys.join(","),...rows.map(o=>keys.map(k=>'"'+String(o[k]??"").replace(/"/g,'""')+'"').join(","))].join("\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"}));a.download="amit-social-hub-orders.csv";a.click();URL.revokeObjectURL(a.href)});
+$("clearOrders").addEventListener("click",()=>{if(confirm("क्या आप इस ब्राउज़र के सभी डेमो ऑर्डर मिटाना चाहते हैं?")){localStorage.removeItem("ash_orders");update();alert("डेमो ऑर्डर मिटा दिए गए।")}});
+renderServices();update();
+</script>
+</body>
+</html>
